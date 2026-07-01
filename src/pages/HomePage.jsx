@@ -118,7 +118,7 @@ export default function HomePage() {
       <p className="section-label">Actividad reciente</p>
       {loading ? <div className="spinner" style={{ margin: '20px auto' }} /> : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingBottom: 8 }}>
-          {actividad.length === 0 && <p style={{ color: 'var(--text-muted)', fontSize: 14, textAlign: 'center', padding: '20px 0' }}>Aún no hay puntos registrados.<br />¡Sé el primero!</p>}
+          {actividad.length === 0 && <p style={{ color: 'var(--text-muted)', fontSize: 14, textAlign: 'center', padding: '20px 0' }}>Aún no hay puntos registrados.<br />¡Haz el primero!</p>}
           {actividad.map(p => (
             <div key={p.id} className="card" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ width: 36, height: 36, borderRadius: '50%', background: p.estado === 'recogido' ? 'rgba(74,222,128,0.15)' : 'rgba(251,191,36,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 16 }}>
