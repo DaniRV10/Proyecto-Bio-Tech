@@ -83,13 +83,3 @@ npm run dev
 
 ---
 
-## Paso 5 — Confirmar que funciona
-
-✅ Crea una cuenta (nombre, usuario, contraseña)
-✅ Registra un punto en el mapa (toca el mapa para mover el marcador)
-✅ Ve al mapa y presiona "Ruta óptima"
-✅ En Supabase > Table Editor verás los datos guardados
-✅ La pestaña "Comercios" muestra "Próximamente"
-
----
-
