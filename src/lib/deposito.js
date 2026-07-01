@@ -4,8 +4,8 @@
 // =============================================
 
 export const DEPOSITO = {
-  lat: -29.958,   // <-- Cambia aquí la latitud
-  lng: -71.343,   // <-- Cambia aquí la longitud
+lat: -29.96222859319192,
+  lng: -71.3484955539017,  
   nombre: 'Base de operaciones',
 }
 
