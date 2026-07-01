@@ -85,8 +85,9 @@ export default function ComerciosPage() {
     const { data } = await supabase
       .from('canjes')
       .select('*, comercios(nombre)')
+      .eq('user_id', profile?.id)
       .order('created_at', { ascending: false })
-      .limit(10)
+      .limit(30)
     setHistorial(data || [])
   }
 

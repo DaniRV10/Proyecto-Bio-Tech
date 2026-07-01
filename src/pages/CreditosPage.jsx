@@ -11,7 +11,8 @@ export default function CreditosPage() {
   useEffect(() => { refreshProfile(); fetchHistorial() }, [])
 
   async function fetchHistorial() {
-    const { data } = await supabase.from('puntos').select('id, creditos_otorgados, kg_real, direccion, recogido_at').eq('estado', 'recogido').order('recogido_at', { ascending: false }).limit(20)
+    const { data: { user: authUser } } = await supabase.auth.getUser()
+    const { data } = await supabase.from('puntos').select('id, creditos_otorgados, kg_real, direccion, recogido_at').eq('estado', 'recogido').eq('user_id', authUser.id).order('recogido_at', { ascending: false }).limit(20)
     setHistorial((data || []).map(p => ({ monto: p.creditos_otorgados, desc: `Recojo · ${p.kg_real} kg`, sub: p.direccion || 'Punto de recolección', fecha: p.recogido_at })))
     setLoading(false)
   }

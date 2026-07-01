@@ -15,7 +15,7 @@ export default function HomePage() {
   useEffect(() => { refreshProfile(); fetchActividad(); fetchRedStats() }, [])
 
   async function fetchActividad() {
-    const { data } = await supabase.from('puntos').select('*').order('created_at', { ascending: false }).limit(5)
+    const { data } = await supabase.from('puntos').select('*').eq('user_id', user.id).order('created_at', { ascending: false }).limit(5)
     setActividad(data || []); setLoading(false)
   }
 
